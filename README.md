@@ -42,3 +42,34 @@ git checkout v20.0.0
 # Build the binary
 make install
 ```
+
+## ⚙️ Node Configuration
+After building the binary, configure your node for running as a validator on the ZetaChain network:
+```bash
+# Prepare cosmovisor directories
+mkdir -p $HOME/.zetacored/cosmovisor/genesis/bin
+sudo ln -s $HOME/.zetacored/cosmovisor/genesis $HOME/.zetacored/cosmovisor/current -f
+sudo ln -s $HOME/.zetacored/cosmovisor/current/bin/zetacored /usr/local/bin/zetacored -f
+
+# Move the binary to cosmovisor directory
+mv $(which zetacored) $HOME/.zetacored/cosmovisor/genesis/bin
+
+# Set up CLI configuration
+zetacored config chain-id zetachain_7000-1
+zetacored config keyring-backend file
+zetacored config node tcp://localhost:22557
+
+# Initialize the node
+zetacored init "Vixy" --chain-id zetachain_7000-1
+```
+## 🌐 Download Genesis and Addrbook Files
+To sync with the ZetaChain network, download the genesis and addrbook files:
+```bash
+# Download genesis file
+curl -L https://snapshots.nodejumper.io/zetachain/genesis.json > $HOME/.zetacored/config/genesis.json
+
+# Download addrbook file
+curl -L https://snapshots.nodejumper.io/zetachain/addrbook.json > $HOME/.zetacored/config/addrbook.json
+```
+
+
