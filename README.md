@@ -12,15 +12,15 @@ For an easier setup, you can use the provided bash script to automatically insta
 1. Download the setup script:
    ```bash
     wget https://github.com/infravixystyle/zetachain/blob/main/setup_zetachain.sh
-  ```
+   ```
 2. Make the script executable:
-  ```bash
-  chmod +x setup_zetachain.sh
-  ```
+   ```bash
+   chmod +x setup_zetachain.sh
+   ```
 3. Run the script
-  ```bash
-  ./setup_zetachain.sh
-```
+   ```bash
+   ./setup_zetachain.sh
+   ```
 
 
 ## 📋 **Dependencies Installation**
