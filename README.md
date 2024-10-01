@@ -66,10 +66,10 @@ zetacored init "Vixy" --chain-id zetachain_7000-1
 To sync with the ZetaChain network, download the genesis and addrbook files:
 ```bash
 # Download genesis file
-curl -L https://snapshots.nodejumper.io/zetachain/genesis.json > $HOME/.zetacored/config/genesis.json
+wget https://raw.githubusercontent.com/zeta-chain/network-config/main/mainnet/genesis.json -O ~/.zetacored/config/genesis.json
 
 # Download addrbook file
-curl -L https://snapshots.nodejumper.io/zetachain/addrbook.json > $HOME/.zetacored/config/addrbook.json
+wget https://raw.githubusercontent.com/zeta-chain/network-config/main/mainnet/addrbook.json -O ~/.zetacored/config/addrbook.json
 ```
 ## 🔧 Further Configuration
 Apply further configurations to ensure the node is properly set up:
